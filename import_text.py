@@ -7,7 +7,7 @@ convert them to a text file
 import requests
 from bs4 import BeautifulSoup
 
-# Create URL list with 10 different restaurants
+# Create URL list with 9 different restaurants
 restaurant_list = ['mala-restaurant-boston',
                    'tora-japanese-restaurant-boston',
                    'pho-le-restaurant-boston',
@@ -16,7 +16,6 @@ restaurant_list = ['mala-restaurant-boston',
                    'happy-lamb-hot-pot-boston-4',
                    'futago-udon-boston',
                    'peach-farm-boston',
-                   'tea-do-boston-boston-2',
                    'santouka-back-bay-boston-2'
                    ]
 url_dict = {}
