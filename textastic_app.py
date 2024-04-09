@@ -1,20 +1,26 @@
 
 
 from textastic import Textastic
-import pprint as pp
-import textastic_parsers as tp
 
 def main():
     tt = Textastic()
 
-    tt.load_text('file.txt', 'A')
-    tt.load_text('file1.txt', 'B')
-    tt.load_text('file2.txt', 'C')
-    tt.load_text('myfile.json', 'J', parser=tp.json_parser)
+    tt.load_text('txt/futago-udon-boston.txt', 'futago')
+    tt.load_text('txt/happy-lamb-hot-pot-boston-4.txt', 'happylamb')
+    tt.load_text('txt/kaju-tofu-house-allston-2.txt', 'kaju')
+    tt.load_text('txt/mala-restaurant-boston.txt', 'mala')
+    tt.load_text('txt/peach-farm-boston.txt', 'peach')
+    tt.load_text('txt/pho-le-restaurant-boston.txt', 'pho')
+    tt.load_text('txt/santouka-back-bay-boston-2.txt', 'santouka')
+    tt.load_text('txt/seoul-soulongtang-boston.txt', 'seoul')
+    tt.load_text('txt/tora-japanese-restaurant-boston.txt', 'tora')
 
-    pp.pprint(tt.data)
-    tt.compare_num_words()
-
+    tt.sentiment_scatter(['futago', 'happylamb', 'kaju', 'mala', 'peach', 'pho',
+                            'santouka', 'seoul', 'tora'])
+    tt.wordcount_sankey(['futago', 'happylamb', 'kaju', 'mala', 'peach', 'pho',
+                            'santouka', 'seoul', 'tora'], k=7)
+    tt.generate_word_cloud(['futago', 'happylamb', 'kaju', 'mala', 'peach', 'pho',
+                            'santouka', 'seoul', 'tora', 'tora'])
 
 if __name__ == '__main__':
     main()
